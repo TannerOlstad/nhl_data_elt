@@ -18,12 +18,12 @@ The code in which I preformed the data ETL, can be found in NHL_etl.py
 
 This project has been interesting to work on, I was able to understand the process of how to gather data from a source such as an API, and process it for use. I learned the fundamentals of working with API endpoints, JSON files and connecting to a Database (A lot easier than I thought). If I was to improve this project, I would like to build out an advanced schema for the database. I would also like to create simple and efficient ways to continue uploading new data to the database.
 
-As a loose schema, here are the talbes, and the respective 'teamID' shared across them.
+As a loose schema, here are the tables, and the respective 'teamID' shared across them.
 
 Table      | Keys
 -----------| -------------
-Standings  | TeamId
-Boxscores  | TeamId
+Standings  | teamAbbrev
+Boxscores  | TeamId, teamAbbrev
 Players    | TeamId
 Goalies    | TeamId
 
