@@ -10,6 +10,8 @@ One of the valuable lessons I learned while iterating through the api, was the n
 
 I have also included the output datasets (Which were uploading to a MySql server) as csvs if one is inclined to look at the data.
 
+The code in which I preformed the data ETL, can be found in NHL_etl.py
+
 -----------------------------------
 
 ## Conclusion
