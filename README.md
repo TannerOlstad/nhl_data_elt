@@ -17,6 +17,8 @@ The code in which I preformed the data ETL, can be found in NHL_etl.py
 # Analysis
 #### Some Light Analysis on our new stored data
 
+Find my analysis in viz.ipynb
+
 My goal was to succesfully extract my data, from my database. This was done with SQLalchemy libary, which worked perfectly.
 
 The first analysis was looking at the games with the most penalty minutes from the NHL 2022-20223 season, specifically the top 10. This visualization highlights the top 10 games. The highest amount of PIM in a game, was 180 (Longer than NHL regulation).
