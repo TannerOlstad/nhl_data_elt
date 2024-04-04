@@ -108,12 +108,14 @@ def game_stat_extraction(gameid):
     
     game_details = {
     'gameid' : gameid,
+    'game_date': boxscore['gameDate'],
     'venue': boxscore['venue']['default'],
     'gameType': boxscore['gameType'],
     'season': boxscore['season'],
     'period_count': boxscore['periodDescriptor']['number'],
     'period_type': boxscore['periodDescriptor']['periodType'],
     'home_id': home.get('id'),
+    'home_abbrev': home.get('abbrev'),
     'home_goals': home.get('score'),
     'home_sog': get_stat(teamGameStats, 'sog', True),
     'home_faceoffWinningPctg': get_stat(teamGameStats, 'faceoffWinningPctg', True),
@@ -122,6 +124,7 @@ def game_stat_extraction(gameid):
     'home_hits': get_stat(teamGameStats, 'hits', True),
     'home_blocks': get_stat(teamGameStats, 'blockedShots', True),
     'away_id': away.get('id'),
+    'away_abbrev': away.get('abbrev'),
     'away_goals': away.get('score', None),
     'away_sog': get_stat(teamGameStats, 'sog', False),
     'away_faceoffWinningPctg': get_stat(teamGameStats, 'faceoffWinningPctg', False),
@@ -292,8 +295,8 @@ Goalies = goalie_stats
 '''
 # Upload and append to tables
 
-standings_df.to_sql('standings', con=engine, index=False, if_exists='append')
-season_boxscores.to_sql('boxscores', con=engine, index=False, if_exists='append')
+standings_df.to_sql('standings', con=engine, index=False, if_exists='replace')
+season_boxscores.to_sql('boxscores', con=engine, index=False, if_exists='replace')
 player_stats.to_sql('players', con=engine, index=False, if_exists='replace')
 goalie_stats.to_sql('goalies', con=engine, index=False, if_exists='replace')
 
